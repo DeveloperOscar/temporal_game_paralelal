@@ -16,9 +16,6 @@ public class ShipProcess extends Thread {
 
     Ship ship = null;
 
-    public ShipProcess() {
-    }
-
     public ShipProcess(Ship ship) {
         this.ship = ship;
     }
@@ -28,16 +25,17 @@ public class ShipProcess extends Thread {
         while (true) {
             switch (Ship.move) {
                 case "static":
+                    ship.setImageFront();
                     break;
 
                 case "left":
                     ship.moveLeft();
-
+                    ship.setImageLeft();
                     break;
 
                 case "right":
                     ship.moveRight();
-
+                    ship.setImageRight();
                     break;
             }
 
